@@ -1,0 +1,24 @@
+﻿@model List<WebApplication3.Models.Items>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Items in Catalog</title>
+</head>
+<body>
+<h1>Items in Catalog</h1>
+    
+<ul>
+    @foreach (var item in Model)
+    {
+        <li>
+            <a asp-controller="Home" asp-action="ItemDetails" asp-route-itemId="@item.item_id">
+                @item.title
+            </a>
+        </li>
+    }
+</ul>
+
+<p><a asp-action="Index">Back to Catalog List</a></p>
+</body>
+</html>
